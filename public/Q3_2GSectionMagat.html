@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+<meta charset="UTF-8">
+<title>Club Application Form</title>
+
+<link rel="stylesheet" href="Q3_2GSectionMagat.css">
+
+<script>
+    function confirmSubmit() {
+        return confirm("Are you 100% sure you want to submit this application?");
+    }
+    function confirmReset() {
+        return confirm("Are you 100% sure you want to reset the form?");
+    }
+    function checkEmpty(element) {
+        if (element.value.trim() === "") {
+            element.classList.add("Required Field");
+        } else {
+            element.classList.remove("Required Field");
+        }
+    }
+</script>
+</head>
+
+<body>
+
+<form method="post" action="submit" 
+      onsubmit="return confirmSubmit()" 
+      onreset="return confirmReset()">
+
+    <fieldset>
+        <legend>Personal Information</legend>
+        <label>
+            Student ID:
+            <input type="number" name="student_id" required onblur="checkEmpty(this)">
+        </label>
+        <label>
+            Full Name:
+            <input type="text" name="full_name" required onblur="checkEmpty(this)">
+        </label>
+        <label>
+            Birthday:
+            <input type="date" name="birthday" required onblur="checkEmpty(this)">
+        </label>
+        <label>
+            Email Address:
+            <input type="email" name="email" required onblur="checkEmpty(this)">
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Application Details</legend>
+
+        <label>
+            Mobile Phone:
+            <input type="text" name="mobile" required onblur="checkEmpty(this)">
+        </label>
+
+        <label>
+            Grade Level:
+            <select name="grade_level" required onblur="checkEmpty(this)">
+                <option value="">-- Select Grade --</option>
+                <option value="g7">FYP: 7th Grade</option>
+                <option value="g8">FYP: 8th Grade</option>
+                <option value="g9">AYP: 9th Grade</option>
+                <option value="g10">AYP: 10th Grade</option>
+                <option value="g11">SYP: 11th Grade</option>
+                <option value="g12">SYP: 12th Grade</option>
+            </select>
+        </label>
+
+        <label>
+            Intern / Extern:
+            <input type="radio" name="status" value="intern_role" required> Intern
+            <input type="radio" name="status" value="extern_role"> Extern
+        </label>
+
+        <label>
+            Preferred Club:
+            <select name="club" required onblur="checkEmpty(this)">
+                <option value="">-- Pick your chosen Club --</option>
+                <option value="tech_club">XYZ</option>
+                <option value="arts_club">Exposure</option>
+                <option value="science_club">AstroSoc</option>
+                <option value="Math_club">Math Club</option>
+                <option value="sports_club">Alianti(pick this one trust!!)</option>
+            </select>
+        </label>
+
+        <label>
+            What are your reasons for joining this club?
+            <textarea name="reason" rows="4" required onblur="checkEmpty(this)"></textarea>
+        </label>
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+
+</form>
+
+</body>
+</html>
