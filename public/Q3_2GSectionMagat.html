@@ -4,15 +4,41 @@
 <meta charset="UTF-8">
 <title>Club Application Form</title>
 
+
 <link rel="stylesheet" href="Q3_2GSectionMagat.css">
+
 
 <script>
     function confirmSubmit() {
-        return confirm("Are you 100% sure you want to submit this application?");
+        if (!confirm("Are you 100% sure you want to submit this application?")) {
+            return false;
+        }
+        let signups = JSON.parse(localStorage.getItem("clubSignUps")) || [];
+        const form = document.querySelector("form");
+        const signupData = {
+            studentID: form.student_id.value,
+            fullName: form.full_name.value,
+            birthday: form.birthday.value,
+            email: form.email.value,
+            mobile: form.mobile.value,
+            gradeLevel: form.grade_level.value,
+            status: form.status.value,
+            club: form.club.value,
+            reason: form.reason.value
+        };
+
+        signups.push(signupData);
+        localStorage.setItem("clubSignUps", JSON.stringify(signups));
+
+        alert("Application submitted successfully!");
+        form.reset();
+        return false; 
     }
+
     function confirmReset() {
         return confirm("Are you 100% sure you want to reset the form?");
     }
+
     function checkEmpty(element) {
         if (element.value.trim() === "") {
             element.classList.add("Required Field");
@@ -20,13 +46,17 @@
             element.classList.remove("Required Field");
         }
     }
+
+    function viewSignUps() {
+        window.location.href = "signups.html";
+    }
 </script>
 </head>
 
 <body>
 
-<form method="post" action="submit" 
-      onsubmit="return confirmSubmit()" 
+<form method="post" 
+      onsubmit="return confirmSubmit()"
       onreset="return confirmReset()">
 
     <fieldset>
@@ -97,6 +127,7 @@
     <div class="buttons">
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
+        <input type="button" value="View All Signups" onclick="viewSignUps()">
     </div>
 
 </form>
