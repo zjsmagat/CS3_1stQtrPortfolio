@@ -1,0 +1,27 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #a34e51;
+        padding: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #df6969;
+    }
+
+    select {
+        margin-bottom: 15px;
+        padding: 6px;
+    }
