@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>View Club Sign-Ups</title>
+
+<link rel="stylesheet" href="viewsignups.css">
+
+<script>
+
+    let signUps = JSON.parse(localStorage.getItem("clubSignUps")) || [];
+
+    function displayTable(filterClub = "all") {
+        const tableBody = document.getElementById("tablebody");
+        const message = document.getElementById("nodatamessage");
+
+        tableBody.innerHTML = "";
+
+        let filtered = signUps.filter(s =>
+            filterClub === "all" || s.club === filterClub
+        );
+
+        if (filtered.length === 0) {
+            message.style.display = "block";
+        } else {
+            message.style.display = "none";
+
+            filtered.forEach(s => {
+                let row = `
+                    <tr>
+                        <td>${s.studentID}</td>
+                        <td>${s.fullName}</td>
+                        <td>${s.birthday}</td>
+                        <td>${s.email}</td>
+                        <td>${s.mobile}</td>
+                        <td>${s.gradeLevel}</td>
+                        <td>${s.status}</td>
+                        <td>${s.club}</td>
+                        <td>${s.reason}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        document.getElementById("total").textContent = filtered.length;
+    }
+
+    function filterByClub() {
+        const club = document.getElementById("clubFilter").value;
+        displayTable(club);
+    }
+
+    window.onload = () => displayTable();
+</script>
+
+</head>
+
+<body>
+
+<h2>Club Sign-Ups</h2>
+
+<p>
+    <a href="Q3_2GSectionMagat.html">←Back to Form</a>
+</p>
+
+<label>
+    Filter by Club:
+    <select id="clubFilter" onchange="filterByClub()">
+        <option value="all">All Clubs</option>
+        <option value="XYZ">XYZ</option>
+        <option value="Exposure">Exposure</option>
+        <option value="AstroSoc">AstroSoc</option>
+        <option value="Math Club">Math Club</option>
+        <option value="Alianti">Alianti</option>
+    </select>
+</label>
+
+    <p id="nodatamessage" style="display:none; font-weight:bold; color:white;">
+    No sign-ups for this club
+</p>
+
+
+<p>Total Sign-Ups: <strong id="total">0</strong></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Grade Level</th>
+            <th>Status</th>
+            <th>Club</th>
+            <th>Reason for Joining</th>
+        </tr>
+    </thead>
+    <tbody id="tablebody"></tbody>
+</table>
+
+</body>
+</html>
