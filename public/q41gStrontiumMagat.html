@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movie Rating List:</title>
+
+<link rel="stylesheet" href="q41gStrontiumMagat.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Add a Movie</h2>
+
+<label>Title:</label>
+<input type="text" id="title">
+
+<label>Year of Release:</label>
+<input type="text" id="year">
+
+<label>Genre:</label>
+<select id="genre">
+<option>Action</option>
+<option>Comedy</option>
+<option>Drama</option>
+<option>Horror</option>
+<option>Sci-Fi</option>
+<option>Adventure</option>
+<option>Fantasy</option>
+<option>Romance</option>
+</select>
+
+<label>Rating:</label>
+<div id="stars">
+<span class="star" data-value="1">★</span>
+<span class="star" data-value="2">★</span>
+<span class="star" data-value="3">★</span>
+<span class="star" data-value="4">★</span>
+<span class="star" data-value="5">★</span>
+</div>
+
+<br><br>
+
+<button onclick="addMovie()">Add Movie</button>
+
+<h2>Movie List</h2>
+
+<div id="movielist"></div>
+
+</div>
+
+<script src="q41gStrontiumMagat.js"></script>
+
+</body>
+</html>
