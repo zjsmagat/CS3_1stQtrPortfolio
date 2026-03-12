@@ -69,7 +69,7 @@ function deleteMovie(title){
 
 function displayMovies(){
 
-    const movieList = document.getElementById("movielist")
+    const movielist = document.getElementById("movielist")
 
     movielist.innerHTML = ""
 
@@ -79,7 +79,7 @@ function displayMovies(){
 
         let stars = "<span class='yellow'>"+"★".repeat(movie.rating)+"</span>"
 
-        movieList.innerHTML += `
+        movielist.innerHTML += `
         <div class="movieItem">
         ${movie.title} (${movie.year})-${movie.genre}, Rating: ${stars}
         </div>
