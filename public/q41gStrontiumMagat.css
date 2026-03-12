@@ -52,3 +52,13 @@ button{
     margin-top:10px;
     border-radius:5px;
 }
+
+.movieItem button{
+    margin-left: 10px;
+    padding: 4px 8px;
+    background: rgb(208, 129, 129);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
