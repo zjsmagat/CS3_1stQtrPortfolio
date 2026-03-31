@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Zach Magat">
+  <meta name="description" content="testing and debugging">
+  <meta name="keywords" content="testing and debugging">
+  <title>Zach Magat - Error Logs</title>
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    tr:nth-child(1) ~ tr:nth-child(odd) {
+      background-color: lightgray;
+      color: black;
+    }
+    td, th {
+      padding: 10px;
+    }
+    table {
+      width: 90%;
+      margin: 0 auto;
+    }
+    caption {
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html#start">Table</a>
+      <a href="index.html#input">Input</a>
+      <a href="index.html#output">Output</a>
+    </nav>
+    
+    <h1 style="padding: 30px">Zach Magat / Strontium - Mar 2026</h1>
+  </header>
+
+  <section id="table">
+    <table> 
+      <caption>Error Logs</caption>
+      <tr class="rColor">
+        <th> item# </th> 
+        <th> code line# / CSS or JS </th> 
+        <th> Description</th>
+        <th> Correction Done</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>script.js line 1 (JS)</td>
+        <td>Function plotPoint was missing parameters</td>
+        <td>Added the parameters (x0, y0, x, y)</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>script.js line 2 (JS)</td>
+        <td>console.log was using undefined variables</td>
+        <td>Added correct parameters</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>script.js line 3 (JS)</td>
+        <td>in1 was not defined</td>
+        <td>Changed it to document.getElementById("in1")</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>script.js line 6 (JS)</td>
+        <td>styleleft is the wrong property, there should be a period between style and left</td>
+        <td>Changed to style.left</td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>script.js line 7 (JS)</td>
+        <td>stylebottom is the wrong property, there should be a period between style and bottom</td>
+        <td>Changed to style.bottom</td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>script.js line 11 (JS)</td>
+        <td>out1 was not defined</td>
+        <td>Changed it to document.getElementById("out1")</td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>style.css line 27 (CSS)</td>
+        <td>"nav a :hover" is wrong as there should not be a space between a and :hover</td>
+        <td>Removed space to make nav a:hover</td>
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>style.css nav (CSS)</td>
+        <td>Navigation should have its position be fixed</td>
+        <td>Added position: fixed; top: 0;</td>
+      </tr>
+
+      <tr>
+        <td>9</td>
+        <td>style.css .point (CSS)</td>
+        <td>Should have its position be absolute</td>
+        <td>Added position: absolute</td>
+      </tr>
+
+      <tr>
+        <td>10</td>
+        <td>style.css body (CSS)</td>
+        <td>Multiple font-family overwritten</td>
+        <td>Combined into one declaration</td>
+      </tr>
+
+    </table>
+    <hr>
+  </section>
+
+  <footer>
+    <a href="https://facebook.com"> 
+      <div class="icon facebook"></div>
+    </a>
+    <a href="https://twitter.com">
+      <div class="icon twitter"></div>
+    </a>
+    <a href="https://github.com">
+      <div class="icon github"></div>
+    </a>
+  </footer>
+
+</body>
+</html>
